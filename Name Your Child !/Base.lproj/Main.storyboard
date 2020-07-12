@@ -70,6 +70,9 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                 <state key="normal" title="Boy"/>
+                                                                <connections>
+                                                                    <action selector="boyButtonPresses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaE-N0-CT7"/>
+                                                                </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="male" translatesAutoresizingMaskIntoConstraints="NO" id="qnP-Vc-Ng8">
                                                                 <rect key="frame" x="23" y="11" width="37" height="33"/>
@@ -100,6 +103,9 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                 <state key="normal" title="Girl"/>
+                                                                <connections>
+                                                                    <action selector="girlButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="La5-gv-nwc"/>
+                                                                </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="female" translatesAutoresizingMaskIntoConstraints="NO" id="h5M-2A-vM8">
                                                                 <rect key="frame" x="19" y="10" width="43" height="35"/>
@@ -142,10 +148,76 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="boyButton" destination="V64-0V-uWr" id="XDz-gF-8Ho"/>
+                        <outlet property="girlButton" destination="XeB-sh-RW8" id="95k-cv-ka0"/>
+                        <segue destination="RaQ-gl-bBw" kind="show" identifier="nameWindow" id="J0W-vg-sEs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+        <!--Name View Controller-->
+        <scene sceneID="11a-jx-aO8">
+            <objects>
+                <viewController id="RaQ-gl-bBw" customClass="NameViewController" customModule="Name_Your_Child__" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fb7-UM-uEv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uAm-vd-qXX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcO-vh-afJ">
+                                <rect key="frame" x="137" y="764" width="140" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="T8X-ps-sjq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="🔍  Another"/>
+                                <connections>
+                                    <action selector="searchAnotherButtonPressed:" destination="RaQ-gl-bBw" eventType="touchUpInside" id="19f-kz-5Kk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvt-5t-sc4">
+                                <rect key="frame" x="150" y="394" width="114" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your baby name is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLe-0a-x8s">
+                                <rect key="frame" x="53" y="310" width="308" height="102"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rvt-5t-sc4" firstAttribute="top" secondItem="RLe-0a-x8s" secondAttribute="bottom" constant="-18" id="3UA-hk-kBd"/>
+                            <constraint firstItem="uAm-vd-qXX" firstAttribute="leading" secondItem="fb7-UM-uEv" secondAttribute="leading" id="B4b-dh-awL"/>
+                            <constraint firstItem="RLe-0a-x8s" firstAttribute="centerX" secondItem="fb7-UM-uEv" secondAttribute="centerX" id="OVh-T2-WkN"/>
+                            <constraint firstItem="nfT-hO-PaK" firstAttribute="bottom" secondItem="EcO-vh-afJ" secondAttribute="bottom" constant="4" id="Twv-Ki-7cu"/>
+                            <constraint firstAttribute="bottom" secondItem="uAm-vd-qXX" secondAttribute="bottom" id="hId-fF-o2V"/>
+                            <constraint firstItem="uAm-vd-qXX" firstAttribute="top" secondItem="fb7-UM-uEv" secondAttribute="top" id="jIh-Zj-2EX"/>
+                            <constraint firstItem="rvt-5t-sc4" firstAttribute="centerY" secondItem="fb7-UM-uEv" secondAttribute="centerY" id="kXE-kf-EaT"/>
+                            <constraint firstItem="uAm-vd-qXX" firstAttribute="trailing" secondItem="fb7-UM-uEv" secondAttribute="trailing" id="rKD-c9-DMB"/>
+                            <constraint firstItem="EcO-vh-afJ" firstAttribute="centerX" secondItem="fb7-UM-uEv" secondAttribute="centerX" id="vup-jC-c0R"/>
+                            <constraint firstItem="rvt-5t-sc4" firstAttribute="centerX" secondItem="fb7-UM-uEv" secondAttribute="centerX" id="zJz-OM-8Dc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nfT-hO-PaK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oKV-V8-3bF"/>
+                    <connections>
+                        <outlet property="background" destination="uAm-vd-qXX" id="A4W-fl-oyc"/>
+                        <outlet property="nameLabel" destination="rvt-5t-sc4" id="k0M-YH-pVH"/>
+                        <outlet property="searchAnotherButton" destination="EcO-vh-afJ" id="Smc-EI-QKx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yk4-Sv-hf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949" y="130"/>
         </scene>
     </scenes>
     <resources>
