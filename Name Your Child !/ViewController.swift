@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Lottie
 
 class ViewController: UIViewController {
 
     var gender : String?
+    @IBOutlet var animationView: AnimationView!
+    @IBOutlet var mainScreenImageView: UIImageView!
     @IBOutlet weak var girlButton: UIButton!
     @IBOutlet weak var boyButton: UIButton!
     override func viewDidLoad() {
@@ -20,6 +23,9 @@ class ViewController: UIViewController {
         boyButton.layer.cornerRadius = 25
         girlButton.layer.masksToBounds = true
         boyButton.layer.masksToBounds = true
+        mainScreenImageView.isHidden = true
+        
+        animationWindow()
     }
 
     @IBAction func boyButtonPresses(_ sender: UIButton) {
@@ -42,5 +48,11 @@ class ViewController: UIViewController {
         }
     }
 
+    func animationWindow(){
+//        animationView = AnimationView(name: "baby")
+        animationView.animation = Animation.named("baby")
+        animationView.play()
+        animationView.loopMode = .loop
+    }
 }
 

@@ -24,9 +24,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACD-po-g2v" userLabel="topView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Your Child !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVC-Qp-Uj3">
-                                                <rect key="frame" x="19.5" y="113.5" width="375" height="57.5"/>
-                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="46"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Your Child !  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVC-Qp-Uj3">
+                                                <rect key="frame" x="11" y="89.5" width="392.5" height="105"/>
+                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="31"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -46,10 +46,19 @@
                                                     <constraint firstAttribute="height" constant="190" id="xM4-GN-drf"/>
                                                 </constraints>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WvP-Xt-0uG" customClass="AnimationView" customModule="Lottie">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
+                                            </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="WvP-Xt-0uG" firstAttribute="top" secondItem="nGi-GY-rYo" secondAttribute="top" id="AIp-Xs-Gpa"/>
+                                            <constraint firstItem="WvP-Xt-0uG" firstAttribute="leading" secondItem="nGi-GY-rYo" secondAttribute="leading" id="C9P-LG-z7q"/>
+                                            <constraint firstAttribute="bottom" secondItem="WvP-Xt-0uG" secondAttribute="bottom" id="FsL-aT-jPw"/>
                                             <constraint firstItem="BHL-ry-tLz" firstAttribute="centerX" secondItem="nGi-GY-rYo" secondAttribute="centerX" id="ZJu-iw-Ndn"/>
                                             <constraint firstItem="BHL-ry-tLz" firstAttribute="centerY" secondItem="nGi-GY-rYo" secondAttribute="centerY" id="Zeg-75-Vg4"/>
+                                            <constraint firstItem="WvP-Xt-0uG" firstAttribute="centerX" secondItem="nGi-GY-rYo" secondAttribute="centerX" id="a72-vp-0x1"/>
+                                            <constraint firstItem="WvP-Xt-0uG" firstAttribute="centerY" secondItem="nGi-GY-rYo" secondAttribute="centerY" id="cXZ-mY-Shb"/>
+                                            <constraint firstAttribute="trailing" secondItem="WvP-Xt-0uG" secondAttribute="trailing" id="qUx-nC-YQy"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8l-Ek-XjM" userLabel="bottomView">
@@ -149,8 +158,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="WvP-Xt-0uG" id="5bd-zf-g6r"/>
                         <outlet property="boyButton" destination="V64-0V-uWr" id="XDz-gF-8Ho"/>
                         <outlet property="girlButton" destination="XeB-sh-RW8" id="95k-cv-ka0"/>
+                        <outlet property="mainScreenImageView" destination="BHL-ry-tLz" id="LgI-bH-MeP"/>
                         <segue destination="RaQ-gl-bBw" kind="show" identifier="nameWindow" id="J0W-vg-sEs"/>
                     </connections>
                 </viewController>
